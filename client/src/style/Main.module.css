@@ -21,6 +21,9 @@ body{
     border-radius: 16px;
     padding: 15px 25px 20px;
     text-shadow: 1px 1px 3px white;
+    color: rgba(20, 20, 20, 0.799);
+   text-shadow: 2px 2px 2px rgba(255,255,255,0.3);
+    box-sizing: border-box;
  }
 .container>h1{
    font-family: sans-serif;
@@ -47,9 +50,10 @@ body{
  .inputs>input {
    border-radius: 16px;
    font-size: 25px;
+   margin-left: 35px;
    padding: 0 7px;
    background: linear-gradient(225deg, rgb(34, 36, 35) 29%, rgb(59, 65, 65) 62%, rgb(31, 48, 45) 88%);
-   color: rgb(167, 166, 166);
+   color: rgb(240, 237, 237);
  }
 .button{
    width: 50%;
@@ -61,15 +65,17 @@ body{
    font-weight:900;
    text-shadow: 1px 1px 3px rgb(229, 221, 221);
    color:rgb(14, 14, 14);
-   
+
  }
 .button:hover{
-   text-shadow: 1px 1px 3px white;
-   color:rgb(61, 61, 61);
-   border: 1px solid rgb(61, 61, 61);
+   text-shadow: 1px 1px 3px rgb(61, 61, 61);
+   color:rgb(154, 154, 154);
+   border: 1px solid rgb(154, 154, 154);
    border-radius: 16px;
    width: 100%;
    padding: 3px 10px;
+   box-shadow: 1px 1px 3px rgb(61, 61, 61);
+   
  }
  .inputs>input:active{
    background-color: rgba(0, 0, 0, 0.747);

@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom'
 import logo from '../style/img/spy.png'
 
 const FIELDS = {
-    name : 'name',
-    room: 'room'
+    NAME : 'name',
+    ROOM: 'room',
 }
 
 const Main = ()=>{
 
-    const {name,room} = FIELDS
+    const {NAME,ROOM} = FIELDS
 
     const [values,setValues] = useState({
-        [name]: "",
-        [room]:""
+        [NAME]: "",
+        [ROOM]:"",
     });
 
     const changeChat =({target:{value,name}}) => {
@@ -23,18 +23,22 @@ const Main = ()=>{
         setValues({...values,[name]:value})
     }
 
-console.log(values)
+    const handleClick = (e)=>{
+        const isDisabled = Object.values(values).some(val=>!val)
+    
+        if (isDisabled) e.preventDefault()
+    }
 
     return (
         <div className={styles.wrap}>
             <div className={styles.container}>
-                <h1 className={styles.heading}><em>Secter</em><img src={logo}/><b>chat</b></h1>
+                <h1 className={styles.heading}><em>Secter</em><img src={logo}/><b>talk</b></h1>
                 <form className={styles.inputs}>
                     <label htmlFor="name">Name</label>
                         <input 
                             type="text" 
                             name="name"
-                            value={values[name]}
+                            value={values[NAME]}
                             placeholder='Your name'
                             onChange={changeChat}
                             autoComplete='off'
@@ -43,14 +47,17 @@ console.log(values)
                         <input 
                             type="text"
                             name='room'
-                            value={values[room]}
+                            value={values[ROOM]}
                             placeholder='Change room'
                             onChange={changeChat}
                             autoComplete='off'
                         />
                     </form>
-                <Link to={`/chat?name=${values[name]}?room=${values[room]}`}>
-                <button className={styles.button}>JOIN</button>
+                <Link to={`/chat?name=${values[NAME]}&room=${values[ROOM]}`}>
+                <button 
+                className={styles.button}
+                onClick = {handleClick}
+                >JOIN</button>
                 </Link>
                 
                 </div>

@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ body{
+    background: linear-gradient(225deg, rgb(34, 36, 35) 29%, rgb(59, 65, 65) 62%, rgb(31, 48, 45) 88%);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     padding: 20px 0 0;
+ 
+  } 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(225deg, rgb(229, 232, 231) 29%, rgb(125, 131, 131) 62%, rgb(155, 155, 155) 88%);
+    border-radius: 16px;
+    width: 90%;
+    height: 90%;
+    padding: 10px 5px 10px;
+    min-width: 360px;
+    font-size: calc((0.5vh+0.5vw)*10);
+    letter-spacing: 3.5px;
+    font-family: sans-serif;
+    color: rgba(7, 7, 7, 0.799);
+    text-shadow: 2px 2px 2px rgba(255,255,255,0.3);
+    font-weight: bold;
+} 
+
+.header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    padding: 10px;
+}
+.header>div{
+    text-align: center;
+}
+.logo {
+    font-size: calc((0.5vh+0.5vw)*10)
+}
+.logo>img {
+    width: calc((0.5vh+0.5vw)*10);
+}
+.users {
+    font-size: calc((0.5vh+0.5vw)*6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leave {
+    font-size: calc((0.5vh+0.5vw)*8);
+    font-family: sans-serif;
+    color: rgba(244, 71, 71, 0.776);
+    background:linear-gradient(225deg, rgba(255, 67, 33, 0.863) 29%, rgb(186, 194, 194) 62%, rgb(197, 187, 187) 88%);
+    text-shadow: 1px 1px 1px rgb(18, 18, 18),
+    -1px -1px 6px rgba(210, 210, 210, 0.6);
+    border-radius: 16px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+.leave:hover {
+    background:linear-gradient(225deg, rgb(166, 170, 169) 29%, rgb(125, 131, 131) 62%, rgb(255, 21, 21) 88%);
+    font-size: calc((0.5vh+0.5vw)*10);
+    color: pink;
+}
+
+.messages {
+    background:linear-gradient(225deg, rgb(34, 36, 35) 29%, rgb(59, 65, 65) 62%, rgb(31, 48, 45) 88%);
+    overflow-y: auto;
+    width: 100%;
+    height: 90%;
+    border-radius: 16px;
+    padding: calc((1vh+1vw)*3)
+}
+.messages>div{
+    margin-bottom: 8px;
+}
+
+.name {
+    color: rgb(154, 151, 151);
+    text-shadow: 1px 1px 1px white ;
+    font-size: calc((1vh+1vw)*2);
+}
+.text{
+    color: white;
+    font-size: calc((1vh+1vw)*3);
+    background-color: rgb(13, 91, 129);
+    border-radius: 16px;
+    display: inline-block;
+    padding: calc((1vh+1vw)*1);
+    
+}
+.me{
+    color: rgb(39, 185, 41);
+    text-shadow: 1px 1px 1px rgb(119, 199, 132) ;
+    font-size: calc((1vh+1vw)*2);
+    text-align: end;
+}
+.me>.name{
+    display: none;
+}
+
+.me>.text {
+    background-color: rgb(50, 148, 20);
+    border-radius: 16px;
+    display: inline-block;
+    padding: calc((1vh+1vw)*1);
+    text-align: end;
+}
+.form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 10% auto;
+    gap: calc((1vh+1vw)*2);
+    padding: calc((1vh+1vw)*1.7);
+    align-items: center;
+}
+.form>div{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.input>input{
+    width: 100%;
+    font-size: calc((0.5vh+0.5vw)*6);
+    padding: calc((1vh+1vw)*1);
+    color: rgb(26, 24, 24);
+    background: inherit;
+    font-family: sans-serif;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.send {
+    background: linear-gradient(225deg, rgb(28, 225, 159) 29%, rgb(172, 179, 179) 62%, rgb(154, 141, 141) 88%);
+    border-radius: 16px;
+    padding: calc((1vh+1vw)*1);
+    font-size: calc((0.5vh+0.5vw)*4);
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: darkgreen;
+    text-shadow: 2px 2px 4px black,
+    2px 2px 3px white;
+}
+.send:hover{
+    background:linear-gradient(225deg, rgb(207, 193, 193), rgb(83, 171, 143), rgb(45, 247, 179));
+    font-size: calc((0.5vh+0.5vw)*5);
+    color: lightgreen;
+}
+.emojis {
+    font-size: 16px;
+    position: absolute;
+    bottom: 85px;
+    right: 10px;
+}
+@media (max-width:1000px) {
+    .logo>img {
+        width: calc((0.5vh+0.5vw)*12);
+    }
+    .logo {
+        font-size: calc((0.5vh+0.5vw)*0);
+        padding-left: 10px;
+    }
+}
+@media (max-width:780px){
+    .container{
+        width: 100%;
+        height: 100%;
+        padding: 0 5px 0;
+        
+    }
+    .chat {
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
