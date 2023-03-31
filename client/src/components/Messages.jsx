@@ -11,8 +11,8 @@ const Messages = ({messages,name})=>{
 
                 return (
                     <div key={i} className={className}>
-                        <span className={styles.name}> {user.name} </span>
-                        <span className={styles.text}>{message}</span>
+                        <span className={(user.name=='Admin')?styles.admin:styles.name}> {user.name} </span>
+                        <span className={(user.name=='Admin')?styles.adminText:styles.text}>{message}</span>
                     </div>
                 )
             })}

@@ -21,7 +21,7 @@
     border-radius: 16px;
     width: 90%;
     height: 90%;
-    padding: 10px 5px 10px;
+    padding: 10px 0 10px;
     min-width: 360px;
     font-size: calc((0.5vh+0.5vw)*10);
     letter-spacing: 3.5px;
@@ -34,8 +34,9 @@
 .header {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
 }
 .header>div{
     text-align: center;
@@ -46,17 +47,22 @@
 .logo>img {
     width: calc((0.5vh+0.5vw)*10);
 }
+.room:hover{
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
 .users {
-    font-size: calc((0.5vh+0.5vw)*6);
+    font-size: calc((0.5vh+0.5vw)*5);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .leave {
-    font-size: calc((0.5vh+0.5vw)*8);
+    font-size: calc((0.5vh+0.5vw)*5);
+    padding: calc((0.5vh+0.5vw)*2.4);;
     font-family: sans-serif;
-    color: rgba(244, 71, 71, 0.776);
+    color: white;
     background:linear-gradient(225deg, rgba(255, 67, 33, 0.863) 29%, rgb(186, 194, 194) 62%, rgb(197, 187, 187) 88%);
     text-shadow: 1px 1px 1px rgb(18, 18, 18),
     -1px -1px 6px rgba(210, 210, 210, 0.6);
@@ -66,7 +72,6 @@
 }
 .leave:hover {
     background:linear-gradient(225deg, rgb(166, 170, 169) 29%, rgb(125, 131, 131) 62%, rgb(255, 21, 21) 88%);
-    font-size: calc((0.5vh+0.5vw)*10);
     color: pink;
 }
 
@@ -75,25 +80,48 @@
     overflow-y: auto;
     width: 100%;
     height: 90%;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     padding: calc((1vh+1vw)*3)
 }
+.messages::-webkit-scrollbar {
+    width: 16px;               /* ширина всей полосы прокрутки */
+  }
+  
+.messages::-webkit-scrollbar-track {
+    background: rgb(69, 69, 68);        /* цвет зоны отслеживания */
+  }
+  
+.messages::-webkit-scrollbar-thumb {
+    background-color: rgb(10, 10, 10);    /* цвет бегунка */
+    border-radius: 20px;       /* округлось бегунка */
+    border: 3px solid rgb(122, 122, 122);  /* отступ вокруг бегунка */
+  }
 .messages>div{
     margin-bottom: 8px;
 }
+.admin{
+    color: rgb(62, 62, 62);
+    text-shadow: 1px 1px 1px rgb(155, 155, 155) ;
+    font-size: calc((1vh+1vw)*2);
+}
+.adminText{
+    font-size: calc((1vh+1vw)*3);
+    display: inline-block;
+    padding: calc((1vh+1vw)*1.2);
+}
 
 .name {
-    color: rgb(154, 151, 151);
-    text-shadow: 1px 1px 1px white ;
+    color: rgb(149, 149, 255);
+    text-shadow: 1px 1px 1px rgb(171, 169, 169) ;
     font-size: calc((1vh+1vw)*2);
 }
 .text{
     color: white;
     font-size: calc((1vh+1vw)*3);
-    background-color: rgb(13, 91, 129);
+    background-color: rgb(123, 124, 124);
     border-radius: 16px;
     display: inline-block;
-    padding: calc((1vh+1vw)*1);
+    padding: calc((1vh+1vw)*1.5);
     
 }
 .me{
@@ -110,7 +138,7 @@
     background-color: rgb(50, 148, 20);
     border-radius: 16px;
     display: inline-block;
-    padding: calc((1vh+1vw)*1);
+    padding: calc((1vh+1vw)*1.5);
     text-align: end;
 }
 .form {
@@ -130,7 +158,7 @@
     width: 100%;
     font-size: calc((0.5vh+0.5vw)*6);
     padding: calc((1vh+1vw)*1);
-    color: rgb(26, 24, 24);
+    color: rgb(241, 233, 233);
     background: inherit;
     font-family: sans-serif;
     border: none;
@@ -145,13 +173,12 @@
     font-size: calc((0.5vh+0.5vw)*4);
     font-weight: bold;
     letter-spacing: 2px;
-    color: darkgreen;
+    color: white;
     text-shadow: 2px 2px 4px black,
     2px 2px 3px white;
 }
 .send:hover{
     background:linear-gradient(225deg, rgb(207, 193, 193), rgb(83, 171, 143), rgb(45, 247, 179));
-    font-size: calc((0.5vh+0.5vw)*5);
     color: lightgreen;
 }
 .emojis {
@@ -168,12 +195,22 @@
         font-size: calc((0.5vh+0.5vw)*0);
         padding-left: 10px;
     }
+    .form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 70% 10% auto;
+    }
 }
 @media (max-width:780px){
+    body {
+        padding: 0;
+        height: 100vh;
+    }
     .container{
         width: 100%;
         height: 100%;
-        padding: 0 5px 0;
+        padding: 0;
+        border-radius: 0;
         
     }
     .chat {
@@ -181,4 +218,5 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
+
 }

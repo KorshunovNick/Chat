@@ -6,8 +6,8 @@ const findUser = (user)=>{
     const userName = strTrim(user.name)
     const userRoom = strTrim(user.room)
     return users.find(
-        (u)=> strTrim(u.name) === userName && strTrim(u.room) === userRoom
-        )
+    (u)=> strTrim(u.name) === userName 
+        && strTrim(u.room) === userRoom)
 }
 
 const addUser = (user)=> {
@@ -23,4 +23,16 @@ const addUser = (user)=> {
     
 }
 
-module.exports = { addUser,findUser }
+const getRoomUsers = (room)=>{
+    return users.filter((e)=> e.room === room)
+}
+
+const deleteUser = (user) => {
+    const found = findUser(user)
+    if (found){
+        users = users.filter(({ room,name})=> room === found.room && name !== found.name)
+    }
+    return found
+}
+
+module.exports = { addUser,findUser,getRoomUsers,deleteUser }
